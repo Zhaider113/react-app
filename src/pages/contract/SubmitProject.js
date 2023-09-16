@@ -1,8 +1,7 @@
 
 import React from "react";
-import { Col, Row, Card, Image, Form, Button } from '@themesberg/react-bootstrap';
+import { Col, Row, Card, Form, Button } from '@themesberg/react-bootstrap';
 import { ImageDrop, ProjectTrackerCounts } from "../../components/Widgets";
-import enFlag from "../../assets/img/flags/en.png";
 import { Routes } from "../../routes";
 import { Link } from "react-router-dom";
 
@@ -28,19 +27,6 @@ const SubmitProject = () => {
                       </Col>
                     </Row>
                     <Row className="d-flex mt-3">
-                      <Col xs={4} sm={3} md={2} xl={2}>
-                        <h6 className="mb-0 fund-subheading">Job Type</h6>
-                        <p className="fund-subheading text-danger mt-1">
-                          Hourly
-                        </p>
-                      </Col>
-                      <Col  xs={4} sm={3} md={2} xl={2}>
-                        <h6 className="mb-0 fund-subheading">Location</h6>
-                        <p className="fund-subheading mt-2">
-                          <Image src={enFlag} alt="en Flag" />
-                          Germany
-                        </p>
-                      </Col>
                       <Col  xs={4} sm={3} md={3} xl={3}>
                         <h6 className="mb-0 fund-subheading">Client Final Price</h6>
                         <p className="fund-subheading mt-2">

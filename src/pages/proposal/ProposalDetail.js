@@ -1,14 +1,14 @@
 
 import React, {useEffect, useState} from "react";
-import { Col, Row, Card, Image, Button, Badge } from '@themesberg/react-bootstrap';
+import { Col, Row, Card, Button, Badge } from '@themesberg/react-bootstrap';
 import { ProjectTrackerCounts, StarReviewComponent } from "../../components/Widgets";
-import enFlag from "../../assets/img/flags/en.png";
 import { Routes } from "../../routes";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
+import cogoToast from 'cogo-toast';
 
 const ProposalDetail = () => {
   const history = useHistory();
-  // let proposal = JSON.parse(localStorage.getItem('proposal'));
+  const { id } = useParams();
   // const user = JSON.parse(localStorage.getItem('user'));
 
   const [proposalData, setProposal] = useState([])
@@ -21,13 +21,33 @@ const ProposalDetail = () => {
     }
   } 
   
+  const [jobPosted, setPosted] = useState([]);
+  const [jobCountry, setJobCountry] = useState([]);
+
+  const viewDetail = (jobId)=>{
+
+        var requestOptions = {
+          method: 'GET',
+          redirect: 'follow'
+        };
+        
+        fetch(`http://16.171.150.73/api/v1/getSingleJob/${jobId}`, requestOptions)
+          .then(response => response.text())
+          .then((result) =>{
+            let data = JSON.parse(result);
+            setPosted(data.job.postedBy.postedJobs);
+            setJobCountry(data.job.postedBy.country);
+          })
+          .catch(error => console.log('error', error));
+  }
+
   useEffect(() => {
     var requestOptions = {
-      method: 'POST',
+      method: 'GET',
       redirect: 'follow'
     };
     
-    fetch(`http://16.171.150.73/api/v1/getSingleProposal/64ede797037f7bf0660b2dac`, requestOptions)
+    fetch(`http://16.171.150.73/api/v1/getSingleProposal/${id}`, requestOptions)
       .then(response => response.text())
       .then((result) =>{
         let data = JSON.parse(result);
@@ -35,13 +55,16 @@ const ProposalDetail = () => {
         setProposal(data.proposal);
         setJob(data.proposal.job);
         setSkill(data.proposal.job.skills);
-        console.log(data.proposal.job.skills);
+        viewDetail(data.proposal.job._id)
       })
       .catch(error => {
-        console.log(error, "Error")
+        cogoToast.error(error.message,{
+          position: 'top-right',
+          hideAfter: 3,
+        });
         history.push('/proposal');
       });
-  }, [history])
+  }, [history, id]);
   return (
     <>
       <Row className="mt-4 p-4">
@@ -71,8 +94,7 @@ const ProposalDetail = () => {
                     <Col  xs={4} sm={3} md={2} xl={2}>
                       <h6 className="mb-0 fund-subheading">Location</h6>
                       <p className="fund-subheading mt-2">
-                        <Image src={enFlag} alt="en Flag" />
-                        Germany
+                        {jobCountry === 'Add Country'?'Not Shown': jobCountry}
                       </p>
                     </Col>
                     <Col  xs={4} sm={3} md={3} xl={3}>
@@ -85,37 +107,29 @@ const ProposalDetail = () => {
                   <Row className="d-flex mt-3">
                       <h4 className="mb-0 project-count-heading heading20">Overview</h4>
                       <hr className="red-line"/>
-                    <Col xs={12} sm={12} md={12} >
+                    <Col xs={12} sm={12} md={12} className="mt-2">
                       <p className="proposal-detail">{removeTags(jobData.description)}</p>
                     </Col>
                   </Row>
                   <Row className="d-flex mt-3">
                       <h4 className="mb-0 project-count-heading heading20">Skills Required </h4>
                       <hr className="red-line  border-bottom"/>
-                      <Col xs={12} sm={12} md={12} >
+                      <Col xs={12} sm={12} md={12}  className="mt-2">
                         {jobSkill.map((item, i) => (
                           <Badge className="me-1 bg-light-red">{item}</Badge>
                         ))}
                       </Col>
-                    {/* <Col xs={12} sm={12} md={12} >
-                      
-                      <Badge className="me-1 bg-light-red">Illustrator</Badge>
-                      <Badge className="me-1 bg-light-red">HTML</Badge>
-                      <Badge className="me-1 bg-light-red">Whiteboard</Badge>
-                      <Badge className="me-1 bg-light-red">HTML</Badge>
-                      <Badge className="me-1 bg-light-red">Whiteboard</Badge>
-                    </Col> */}
                   </Row>
                   <Row className="d-flex mt-3">
                       <h4 className="mb-0 project-count-heading heading20">About The Client</h4>
                       <hr className="red-line  border-bottom"/>
-                    <Col xs={12} sm={12} md={12} >
+                    <Col xs={12} sm={12} md={12}  className="mt-2">
                       <StarReviewComponent />
                       <p className="review-text">
                         United States <span  className="review-text-gry">Tampa</span>  
                       </p>
                       <p className="review-text">
-                        25 Jobs Posted  <span className="review-text-gry">80% Hire Rate, 1 Job Open</span> 
+                        {jobPosted.length} Jobs Posted  <span className="review-text-gry">80% Hire Rate, 1 Job Open</span> 
                       </p>
                       <p className="review-text">
                         $ 200M+ Total Spent   <span className="review-text-gry"> 372 Hires, 55 Active</span> 
@@ -125,19 +139,19 @@ const ProposalDetail = () => {
                   <Row className="d-flex mt-3">
                       <h4 className="mb-0 project-count-heading heading20">You'll Receive</h4>
                       <hr className="red-line  border-bottom"/>
-                    <Col xs={12} sm={12} md={12} >
+                    <Col xs={12} sm={12} md={12}  className="mt-2">
                       <p className="withdrwa-subheading">The estimated payment, after service fees.</p>
                       <p className="withdrwa-subheading text-light-blue">${proposalData.totalPriceAfterFee}</p>
                     </Col>
-                    <Col md={12} className="mt-3">
-                      <Button type="submit" as={Link} to={Routes.SubmitProposal.path} className="m-1 proposal-submitBtn">Edit Proposals</Button>
+                    <Col md={12} className="mt-2">
+                      <Button type="submit" className="m-1 proposal-submitBtn">Edit Proposals</Button>
                       <Button as={Link} to={Routes.WithdrawProposal.path} className=" m-1 proposal-cancelBtn">Withdraw Proposal</Button>
                     </Col>
                   </Row>
                   <Row className="d-flex mt-3">
                       <h4 className="mb-0 project-count-heading heading20">Cover Letter</h4>
                       <hr className="red-line"/>
-                    <Col xs={12} sm={12} md={12} >
+                    <Col xs={12} sm={12} md={12}  className="mt-2">
                       <p className="proposal-detail">{removeTags(proposalData.additionalInfo)}</p>
                     </Col>
                   </Row>

@@ -107,7 +107,7 @@ const Contract = () => {
                           </p>
                         </Col>
                         <Col xs={3} sm={3} md={3}>
-                          <Card.Link href="#" className="proposal-submit">
+                          <Card.Link as={Link} to={Routes.Offer.path}  className="proposal-submit">
                             Review or Re Submit
                           </Card.Link>
                         </Col>
@@ -137,7 +137,7 @@ const Contract = () => {
                           </p>
                         </Col>
                         <Col xs={3} sm={3} md={3}>
-                          <Card.Link href="#" className="proposal-submit">
+                          <Card.Link as={Link} to={Routes.Chat.path} href="#" className="proposal-submit">
                             Send Message
                           </Card.Link>
                         </Col>
@@ -155,7 +155,7 @@ const Contract = () => {
                           </p>
                         </Col>
                         <Col xs={3} sm={3} md={3}>
-                          <Card.Link href="#" className="proposal-submit">
+                          <Card.Link as={Link} to={Routes.Chat.path} href="#" className="proposal-submit">
                             Send Message
                           </Card.Link>
                         </Col>
@@ -173,7 +173,7 @@ const Contract = () => {
                           </p>
                         </Col>
                         <Col xs={3} sm={3} md={3}>
-                          <Card.Link href="#" className="proposal-submit">
+                          <Card.Link as={Link} to={Routes.Chat.path} href="#" className="proposal-submit">
                             Send Message
                           </Card.Link>
                         </Col>
@@ -191,7 +191,7 @@ const Contract = () => {
                           </p>
                         </Col>
                         <Col xs={3} sm={3} md={3}>
-                          <Card.Link href="#" className="proposal-submit">
+                          <Card.Link as={Link} to={Routes.Chat.path} href="#" className="proposal-submit">
                             Send Message
                           </Card.Link>
                         </Col>

@@ -3,6 +3,8 @@ import React from "react";
 import { Col, Row, Card, Form, Nav, Tab, Button } from '@themesberg/react-bootstrap';
 
 import { ProjectTrackerCounts, ProposalGraph, ProjectGraph } from "../../components/Widgets";
+import { Link } from "react-router-dom";
+import { Routes } from "../../routes";
 
 const ProjectAnalytic = () => {
   return (
@@ -189,7 +191,7 @@ const ProjectAnalytic = () => {
                                     </p>
                                   </Col>
                                   <Col xs={4} sm={4} xl={4} className="mt-2">
-                                    <Button type="submit" className="m-1 personal-tab-update deliver-project-btn">Deliver Project</Button>
+                                    <Button as={Link} to={Routes.SubmitProject.path} className="m-1 personal-tab-update deliver-project-btn">Deliver Project</Button>
                                     <p className="job-detail">Make sure deliver the project on time...</p>
                                   </Col>
                                 </Row>

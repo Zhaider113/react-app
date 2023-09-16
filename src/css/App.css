@@ -6,8 +6,8 @@
     width: 100%;
     background: url('../assets/img/bg.jpeg')  left top no-repeat;
     /* font-family: 'Lato', sans-serif; */
-    font-family: 'Inter', sans-serif;
     /* font-family: 'Outfit', sans-serif; */
+    font-family: 'Inter', sans-serif;
     /* height: 100vh; */
   }
   .logo-text{
@@ -15,7 +15,6 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: 'Inter', sans-serif;
     font-size: 50px;
     font-style: normal;
     font-weight: 700;
@@ -24,7 +23,6 @@
   }
   .frrelancer-heading{
     color: #161C2D !important;
-    font-family: 'Inter', sans-serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -33,7 +31,6 @@
   .detail-text{
     color: #151A37;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -72,7 +69,6 @@
     justify-content: center;
     flex-shrink: 0;
     color: #FFF;
-    font-family: 'Inter', sans-serif;
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
@@ -94,7 +90,6 @@
     flex-direction: column;
     justify-content: center;
     color: #FFF;
-    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -108,7 +103,6 @@
     justify-content: center;
     flex-shrink: 0;
     color: #FFF;
-    font-family: 'Inter', sans-serif;
     font-size: 15.722px;
     font-style: normal;
     font-weight: 400;
@@ -124,7 +118,6 @@
     border: 1px solid #9EB8C1 !important;
     color: #1680FB !important;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -155,7 +148,6 @@
     flex-shrink: 0;
     color: #6C757D;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 16.646px;
     font-style: normal;
     font-weight: 500;
@@ -175,7 +167,6 @@
   .google-signIn p{
     color: #333;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 17.571px;
     font-style: normal;
     font-weight: 500;
@@ -183,7 +174,6 @@
   }
   .term-text{
     color: #6C757D;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -193,7 +183,6 @@
   }
   .privacy-text{
     color: #6C757D !important;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -216,7 +205,6 @@
     flex-direction: column;
     color: #FFF;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 18.496px;
     font-style: normal;
     font-weight: 500;
@@ -225,7 +213,6 @@
   .already-text{
     color: #6C757D;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 17.109px;
     font-style: normal;
     font-weight: 400;
@@ -233,7 +220,6 @@
   }
   .sign-link{
     color: #1680FB !important;
-    font-family: 'Inter', sans-serif;
     font-size: 17.109px;
     font-style: normal;
     font-weight: 500;
@@ -260,7 +246,6 @@
   }
   .welcome-msg h5{
     color: #FFF;
-    font-family: 'Inter', sans-serif;
     font-size: 31px;
     font-style: normal;
     font-weight: 700;
@@ -270,7 +255,6 @@
   .welcome-msg p{
     color: #D9D9D9;
     font-feature-settings: 'cv11' on, 'cv01' on, 'ss01' on;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -283,7 +267,6 @@
     border-radius: 27.5px;
     background: #09162D;
     color: #FFF;
-    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -295,23 +278,20 @@
   }
   .job-like-title{
     color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     font-style: normal;
-    font-weight: 700;
-    line-height: 18px; /* 75% */
+    font-weight: 500;
+    line-height: 28px;
   }
   .job-title{
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    color: #1680FB;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 18px; /* 128.571% */
   }
   .posted{
     color: #606060;
-    font-family: 'Inter', sans-serif;
     font-size: 11px;
     font-style: normal;
     font-weight: 700;
@@ -327,15 +307,14 @@
   }
   .job-detail{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 18px; /* 163.636% */
+    text-align: justify;
   }
   .read-more{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 11px;
     font-style: normal;
     font-weight: 700;
@@ -343,14 +322,14 @@
     text-decoration: none;
   }
   .tech-btn{
-    border-radius: 16px;
+    border-radius: 14px;
     background: #F4F4F4;
     color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 9px;
+    font-size: 12px;
+    padding: 0 10px !important;
     font-style: normal;
     font-weight: 600;
-    line-height: 18px; /* 200% */
+    line-height: 25px; /* 200% */
     margin: 0.1rem !important
   }
   .daily-progress-box{
@@ -371,16 +350,14 @@
   }
   .progress-count{
     color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 25px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 700;
     line-height: normal;
     letter-spacing: 0.1px;
   }
   .progress-heading{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-style: normal;
     font-weight: 600;
@@ -390,7 +367,6 @@
   }
   .progress-detail{
     color: #787486;
-    font-family: 'Inter', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -400,7 +376,6 @@
   }
   .calender-title{
     color: #0B1C3F;
-    font-family: 'Inter', sans-serif;
     font-size: 21px;
     font-style: normal;
     font-weight: 800;
@@ -422,7 +397,6 @@
   .cal-day{
     color: var(--gray-3, #828282);
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -433,7 +407,6 @@
   .cal-date{
     color: var(--gray-1, #333);
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -443,7 +416,6 @@
   }
   .upcoming-project-title{
     color: var(--dmv-black, #23262F);
-    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 800;
@@ -467,7 +439,6 @@
     color: var(--black-100, #1C1C1C);
     font-feature-settings: 'cv11' on, 'cv01' on, 'ss01' on;
     text-overflow: ellipsis;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -478,7 +449,6 @@
     font-feature-settings: 'cv11' on, 'cv01' on, 'ss01' on;
 
     /* 12 Regular */
-    font-family: 'Inter', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -486,7 +456,6 @@
   }
   .upcoming-project-time{
     color: #708099;
-    font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
@@ -494,7 +463,6 @@
   }
   .user-name{
     color: #fff !important;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -502,7 +470,6 @@
   }
   .user-role{
     color: #B0C4D9;
-    font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -522,11 +489,14 @@
     align-items: flex-start;
     color: #FFF;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 10px !important;
     font-style: normal;
     font-weight: 600;
     line-height: 10px; /* 100% */
+  }
+  .user-img{
+    width: 124px;
+    height: 124px;
   }
   .profile-detail-nav{
     display: inline-flex;
@@ -536,8 +506,7 @@
   }
   .personal-detail{
     color: #000 !important;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -559,7 +528,6 @@
   }
   .personal-tab-heading{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 26px;
     font-style: normal;
     font-weight: 700;
@@ -567,7 +535,6 @@
   }
   .personal-tab-subheading{
     color: rgba(0, 0, 0, 0.60);
-    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -575,7 +542,6 @@
   }
   .personal-tab-form label{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -586,7 +552,6 @@
     border: 1.5px solid #154AE3;
     color: #1649E6;
     background-color: #fff;
-    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -603,7 +568,6 @@
     border: 1.5px solid #154AE3;
     color: #FFF;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -616,15 +580,13 @@
   }
   .get-paid-heading{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 19.2px; /* 120% */
   }
   .fund-subheading{
-    color: #353535;
-    font-family: 'Inter', sans-serif;
+    color: #5e6d55;
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -637,7 +599,6 @@
     background-color: #919DA9;
     color: #FFF;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -653,7 +614,6 @@
   }
   .withdrwa-subheading{
     color: #353535;
-    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -661,7 +621,6 @@
   }
   .schedule-option label{
     color: #353535;
-    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     font-weight: 300;
@@ -673,7 +632,6 @@
   }
   .schedule-list{
     color: #353535;
-    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -681,7 +639,6 @@
   }
   .form-control{
     color: #353535;
-    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -692,14 +649,19 @@
   }
   .form-control:focus{
     color: #353535;
-    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 19.2px; /* 120% */
     border-radius: 5px;
-    border: 1.5px solid #919DA9;
+    border: 1px solid #e4ebe4;
     background: #FFF;
+    box-shadow: inset 0 1px 1px rgb(9 22 45 / 4%), 0 0 0 0.2rem rgb(9 22 45 / 4%);
+  }
+  textarea:focus-visible {
+    box-shadow: inset 0 1px 1px rgb(9 22 45 / 4%), 0 0 0 0.2rem rgb(9 22 45 / 4%);
+    border: 1px solid #e4ebe4;
+    outline: #e4ebe4 auto 1px;
   }
   .input-group-text{
     border-radius: 5px;
@@ -717,7 +679,6 @@
   }
   .heading36{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
@@ -726,17 +687,15 @@
   .project-subheading{
     color: var(--black-40, rgba(0, 0, 0, 0.40));
     font-feature-settings: 'cv11' on, 'cv01' on, 'ss01' on;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 18px; /* 90% */
   }
   .custome-select{
-    color: #000000;
+    /* color: #000000; */
     text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 500;
     line-height: 17.571px; /* 87.856% */
@@ -748,7 +707,6 @@
     background: #FFF;
     color: #919DA9;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -779,15 +737,13 @@
   }
   .project-count-heading{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: normal;
   }
   .project-count-subheading{
     color: #919DA9;
-    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -802,7 +758,6 @@
   }
   .svg-text{
     fill: #FFF;
-    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 800;
@@ -860,7 +815,6 @@
   }
   .proposal-post-title{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -868,7 +822,6 @@
   }
   .proposal-post-date{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -881,7 +834,6 @@
   }
   .proposal-submit{
     color: #1680FB;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -890,16 +842,14 @@
   }
   .submit-project-heading2{
     color: #353535;
-    font-family: 'Inter', sans-serif;
   }
   .price-text-danger{
     color: #F5365C;
-    font-size: 23px;
+    font-size: 14px;
     font-weight: 600;
   }
   .heading18{
     color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -910,7 +860,6 @@
   }
   .limit-drop-img{
     color: #919DA9;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -918,7 +867,6 @@
   }
   .proposal-submitBtn{
     color: #FFF;
-    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     font-weight: 700;
@@ -934,7 +882,6 @@
   }
   .proposal-cancelBtn{
     color: #1680FB;
-    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -949,9 +896,20 @@
     background-color: #F7F7F9;
     border-color: #1680FB;
   }
+  .proposal-inputs{
+    border: 2px solid #e4ebe4;
+    border-radius: 8px;
+  }
+  .cover-text{
+    display: block;
+    width: 100%;
+    border: 2px solid #e4ebe4;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 13px 14px;
+  }
   .heading20{
     color: #161C2D;
-    font-family: 'Inter', sans-serif;
     font-size: 20px;
   }
   .red-line{
@@ -960,17 +918,23 @@
     background-color: #FE4A23;
     height: 3px !important;
     opacity: 1;
+    margin-bottom: 0px;
+    border-bottom: none;
   }
   .font-600{
     font-weight: 600;
   }
+  .font-500{
+    font-weight: 500;
+  }
   .proposal-detail{
     color: #353535;
-    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
+    text-align: justify;
     font-weight: 500;
-    line-height: 22.5px; /* 150% */
+    line-height: 22.5px;
+    padding: 3px 13px;
   }
   .bg-light-red{
     border-radius: 60px;
@@ -978,7 +942,6 @@
     padding: 10px 20px 10px 20px;
     color: #2E2E2E;
     text-align: center;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -986,10 +949,9 @@
   }
   .review-text{
     color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 24px; /* 150% */
  }
  .review-text-gry{
@@ -1014,17 +976,14 @@
  }
  .font-20-600{
   color: #000;
-  font-family: 'Inter', sans-serif;
   font-size: 20px !important;
   font-style: normal;
   font-weight: 600 !important;
   line-height: normal;
  }
  .font-inter{
-  font-family: 'Inter', sans-serif;
  }
  .font-encode{
-  font-family: 'Inter', sans-serif;
  }
  .font-12{
   font-size: 12px;
@@ -1041,6 +1000,9 @@
  }
  .line-height-1{
   line-height: 5px;
+ }
+ .line-height-10{
+   line-height: 10px;
  }
  .font-w-400{
   font-weight: 400 !important;
@@ -1059,7 +1021,6 @@
  }
  .profile-name{
   color: #000;
-  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -1067,7 +1028,6 @@
  }
  .profile-location{
   color: #919DA9;
-  font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -1080,13 +1040,17 @@
   background: #F3F6F9;
  }
  .input-border-40-focus:focus{
-  border-radius: 0px 40px 40px 0px !important;
+  border-radius: 40px !important;
   border: none !important;
   background: #F3F6F9 !important;
  }
  .css-13cymwt-control{
   background-color: #F3F6F9  !important;
   border-color: transparent !important;
+}
+.css-t3ipsp-control{
+  border: none !important;
+  background-color: #F3F6F9  !important;
  }
  .css-1hb7zxy-IndicatorsContainer{
   display: none !important;
@@ -1096,7 +1060,7 @@
   background: #1680FB !important;
  }
  .css-wsp0cs-MultiValueGeneric{
-  color: #fff;
+  color: #fff !important;
  }
  .css-12a83d4-MultiValueRemove svg{
   fill: #fff;
@@ -1110,6 +1074,8 @@
  }
  .dashboard-search input:focus{
   background: #F3F6F9 !important;
+  border-radius: 0px 20px 20px 0px !important;
+  border-left: 0 !important;
  }
  .dashboard-search .input-group-text{
   background: #F3F6F9;
@@ -1117,7 +1083,6 @@
  }
 .brand-text{
   color: #FFF;
-  font-family: 'Inter', sans-serif;
   font-size: 23px;
   font-style: normal;
   font-weight: 700;
@@ -1129,10 +1094,9 @@
 }
 .filter-title{
   color: #495057;
-  font-family: 'Inter', sans-serif;
-  font-size: 17.5px;
+  font-size: 24px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 21px; /* 120% */
 }
 .job-pagination{
@@ -1163,6 +1127,12 @@
    .modal-dialog {
     max-width: 1000px;
    }
+   .paymentModel .modal-dialog{
+    max-width: 40% !important;
+  }
+  .chat-div{
+    height: 120vh;
+  }
  }
  .submit-proposal-img{
     border-radius: 20px;
@@ -1181,7 +1151,9 @@
  .own-footer{
   height: 60px;
   padding: 21px 0px 18px 12px;
-  border-top: 2px dotted #E9EBEC;
+  background-color: #09162D;
+  /* border-radius: 6px; */
+  color: #FFF;
  }
  .no-bottom-boder{
   border-bottom: none;
@@ -1198,7 +1170,6 @@
  }
  .user-list-title{
   color: #878A99;
-  font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
@@ -1206,7 +1177,7 @@
   text-transform: uppercase;
  }
  .user-chat-header{
-  height: 7% !important;
+  height: 2% !important;
  }
 .user-chat-topbar{
   -webkit-backdrop-filter: blur(7px);
@@ -1248,10 +1219,11 @@
   color: #495057;
 }
 .user-chat-box{
-  height: 86% !important;
+  height: 15.6% !important;
+  overflow-y: auto;
 }
 .user-chat-input{
-  height: 7% !important;
+  height: 2% !important;
 }
 /*********** ************/
 
@@ -1261,7 +1233,6 @@
   border-color: #1680FB;
   color: #FFF;
   text-align: center;
-  font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 700;
@@ -1281,7 +1252,6 @@
  }
  .talent-rate{
   color: #000;
-  font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -1293,7 +1263,6 @@
  }
  .type-rate{
   color: #000;
-  font-family: 'Inter', sans-serif;
   font-size: 8px;
   font-style: normal;
   font-weight: 400;
@@ -1309,7 +1278,7 @@
  .edit-icon-align{
   position: relative;
   left: 150%;
-  top: -27%;
+  top: -30%;
  }
  .save-div{
   background: #1680fb;
@@ -1321,20 +1290,20 @@
  }
  .save-div-align{
   position: relative;
-  left: 150%;
-  top: -27%;
+  left: 200%;
+  top: -17%;
  }
  .save-div svg{
   display: block;
  }
  .profile-name{
   position: absolute;
-  width: 10%;
+  /* width: 10%; */
   border: 2px solid #e4ebe4
  }
  .profile-name:disabled{
   position: absolute;
-  width: 10%;
+  /* width: 10%; */
   border: none
  }
  .user-bio{
@@ -1347,3 +1316,224 @@
  .form-control::placeholder{
   color: #919da394;
  }
+ .upwork-btn-apply{
+  line-height: 39px;
+  max-height: 40px;
+  width: 25%;
+  font-weight: 500;
+  padding: 0px;
+ }
+ .proposal-submit-heading{
+  line-height: 32px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #001e00;
+    font-style: normal;
+ }
+ .sub-heading{
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+ }
+ .role-btn{
+    color: #1680FB;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19.6px;
+    border-radius: 31px;
+    background-color: #fff;
+    border-color: #1680FB;
+    max-height: 35px;
+    margin: 0.14rem !important;
+ }
+ .role-btn-active{
+    color: #FFF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19.6px;
+    border-radius: 31px;
+    background-color: #1680FB;
+    border-color: #1680FB;
+    max-height: 35px;
+    margin: 0.14rem !important;
+ }
+ .role-btn-active:hover{
+    color: #1680FB;
+    background-color: #fff;
+    border-color: #1680FB;
+ }
+ .role-btn-active:disabled{
+  background-color: #1680FB !important;
+  border-color: #1680FB !important;
+  opacity: 1;
+ }
+ .role-btn:active{
+    color: #FFF !important;
+    background-color: #1680FB !important;
+    border-color: #1680FB !important;
+ }
+ .line-height-30{
+  line-height: 30px;
+ }
+ .line-height-30:focus{
+  line-height: 30px;
+ }
+ .cls-1{
+  fill: none;
+ }
+ .overlay-trigger{
+    cursor: pointer;
+ }
+ .border-gry{
+    border-bottom: 1px solid #E6E6E6;
+    width: 90%;
+    max-width: 82%;
+ }
+ .messageBox{
+  width: 50%;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 150% */
+ }
+ .incoming_msg_img {
+  display: inline-block;
+  width: 10%;
+}
+.incoming_msg {
+  vertical-align: top;
+  width: 92%;
+  display: inline-block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 150% */
+ }
+ .incoming_withd_msg p {
+  padding: 5px 10px 5px 12px;
+  width: 100%;
+  float: left;
+  background: #F3F6F9;
+  box-shadow: 0px 5px 10px 0px rgba(30, 32, 37, 0.12);
+  border-radius: 3px;
+  color: #212529;
+  text-align: left;
+}
+.time_date {
+  color: #747474;
+  display: block;
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+.incoming_time_date{
+  float: left;
+}
+.outgoing_time_date{
+  float: right;
+}
+.incoming_withd_msg { width: 57%;}
+.mesgs {
+  float: left;
+  padding: 10px 15px 0 25px;
+  width: 100%;
+}
+
+ .outgoing_msg p {
+  padding: 5px 10px 5px 12px;
+  width:100%;
+  float: right;
+  background: #695EEF;
+  color: #FFF;
+  text-align: right;
+  box-shadow: 0px 5px 10px 0px rgba(30, 32, 37, 0.12);
+  border-radius: 3px;
+}
+/* .outgoing_msg{ overflow:hidden; margin:2px 0 2px;} */
+.outgoing_msg {
+  float: right;
+  width: 46%;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 150% */
+}
+.input_msg_write input {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  color: #4c4c4c;
+  font-size: 15px;
+  min-height: 48px;
+  width: 100%;
+}
+.bg-light-pink{
+  border-radius: 8px;
+  background-color: #FFF2E2;
+  border: none;
+  padding: 3px;
+}
+.bg-light-pink.dropdown-toggle {
+  border-radius: 8px !important;
+  background-color: #FFF2E2 !important;
+  border: none !important;
+  padding: 3px;
+}
+.m-top{
+  margin-top: 2px;
+}
+.bg-light-blue{
+  border-radius: 4px;
+  border: 1px solid #73DCE9;
+  background: #73DCE9;
+  border: none;
+  padding: 3px;
+}
+.bg-light-blue:hover{
+  border-radius: 4px;
+  border: 1px solid #73DCE9;
+  background: #73DCE9;
+  border: none;
+  padding: 3px;
+}
+.bg-light-blue:active{
+  border-radius: 4px;
+  border: 1px solid #73DCE9;
+  background: #73DCE9;
+  border: none;
+  padding: 3px;
+}
+.loaderModel .modal-content{
+  background: transparent;
+  box-shadow: none;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #3d5af1 transparent #3d5af1 transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

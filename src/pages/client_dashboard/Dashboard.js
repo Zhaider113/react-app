@@ -21,7 +21,7 @@ const Dashboard = () => {
   useEffect(() => {
     // fetchJobData()
     var requestOptions = {
-      method: 'GET',
+      method: 'POST',
       redirect: 'follow'
     };
     
@@ -60,7 +60,7 @@ const Dashboard = () => {
               </Row>
               <Row>
                 <Col className="d-block mb-4 mb-md-0">
-                  <h1 className="h2 job-like-title">Jobs you might like</h1>
+                  <h1 className="h2 job-like-title">Jobs you posted</h1>
                 </Col>
               </Row>
               <Row>

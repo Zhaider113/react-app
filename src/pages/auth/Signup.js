@@ -75,7 +75,7 @@ const Signup = () => {
               <SkyDiv />
               {/* sign-up form  */}
               <div className="mb-4 mb-lg-0 bg-white shadow-soft border rounded-right border-light p-4 p-lg-5 h-100 w-100 fmxw-500">
-              <Tab.Container defaultActiveKey="freelancer">
+              <Tab.Container defaultActiveKey="company">
                   <Nav fill variant="pills" className="d-flex align-items-center justify-content-center">
                     <Nav.Item>
                       <Nav.Link eventKey="company" className="mb-sm-3 mb-md-0 company-btn">
@@ -89,34 +89,34 @@ const Signup = () => {
                     </Nav.Item>
                   </Nav>
                   <Tab.Content>
-                    <Tab.Pane eventKey="company" className="py-4">
+                    <Tab.Pane eventKey="freelancer" className="py-4">
                       <Form className="mt-4">
                         <Form.Group id="username" className="mb-4">
-                          <Form.Label>User Name</Form.Label>
+                          <Form.Label className="upcoming-project-title">User Name</Form.Label>
                           <InputGroup>
                             <Form.Control autoFocus required type="username" placeholder="User Name" className="input-field"/>
                           </InputGroup>
                         </Form.Group>
                         {/* <Form.Group id="company" className="mb-4">
-                          <Form.Label>Company Name</Form.Label>
+                          <Form.Label className="upcoming-project-title">Company Name</Form.Label>
                           <InputGroup>
                             <Form.Control autoFocus required type="company" placeholder="Compnay Name" className="input-field"/>
                           </InputGroup>
                         </Form.Group> */}
                         <Form.Group id="email" className="mb-4">
-                          <Form.Label>Email address</Form.Label>
+                          <Form.Label className="upcoming-project-title">Email address</Form.Label>
                           <InputGroup>
                             <Form.Control autoFocus required type="email" placeholder="Email address" className="input-field"/>
                           </InputGroup>
                         </Form.Group>
                         <Form.Group id="password" className="mb-4">
-                          <Form.Label>Your Password</Form.Label>
+                          <Form.Label className="upcoming-project-title">Your Password</Form.Label>
                           <InputGroup>
                             <Form.Control required type="password" placeholder="Password" className="input-field"/>
                           </InputGroup>
                         </Form.Group>
                         <Form.Group id="confirmPassword" className="mb-4">
-                          <Form.Label>Confirm Password</Form.Label>
+                          <Form.Label className="upcoming-project-title">Confirm Password</Form.Label>
                           <InputGroup>
                             <Form.Control required type="password" placeholder="Confirm Password" className="input-field"/>
                           </InputGroup>
@@ -149,28 +149,28 @@ const Signup = () => {
                         </p>
 
                     </Tab.Pane>
-                    <Tab.Pane eventKey="freelancer" className="py-4">
+                    <Tab.Pane eventKey="company" className="py-4">
                     <Form className="mt-4">
                         <Form.Group id="username" className="mb-4">
-                          <Form.Label>User Name</Form.Label>
+                          <Form.Label className="upcoming-project-title">User Name</Form.Label>
                           <InputGroup>
                             <Form.Control autoFocus required  type="text" value={username} onChange={(e)=>setName(e.target.value)} placeholder="User Name" className="input-field"/>
                           </InputGroup>
                         </Form.Group>
                         <Form.Group id="email" className="mb-4">
-                          <Form.Label>Email address</Form.Label>
+                          <Form.Label className="upcoming-project-title">Email address</Form.Label>
                           <InputGroup>
                             <Form.Control autoFocus required type="email"  value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email address" className="input-field"/>
                           </InputGroup>
                         </Form.Group>
                         <Form.Group id="password" className="mb-4">
-                          <Form.Label>Your Password</Form.Label>
+                          <Form.Label className="upcoming-project-title">Your Password</Form.Label>
                           <InputGroup>
                             <Form.Control required type="password" placeholder="Password"  value={password} onChange={(e)=>setPassword(e.target.value)} className="input-field"/>
                           </InputGroup>
                         </Form.Group>
                         <Form.Group id="confirmPassword" className="mb-4">
-                          <Form.Label>Confirm Password</Form.Label>
+                          <Form.Label className="upcoming-project-title">Confirm Password</Form.Label>
                           <InputGroup>
                             <Form.Control required type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} className="input-field"/>
                           </InputGroup>

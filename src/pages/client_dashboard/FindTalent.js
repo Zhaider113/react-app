@@ -1,79 +1,112 @@
 
-import React from "react";
-import { Col, Row, Card, Form, InputGroup, Button } from '@themesberg/react-bootstrap';
+import React, { useEffect, useState } from "react";
+import { Col, Row, Card, Form, InputGroup, Button, OverlayTrigger, Tooltip } from '@themesberg/react-bootstrap';
 
-import { FindTalentWidget, JobPagination } from "../../components/Widgets";
+import { FindTalentWidget } from "../../components/Widgets";
 
-import Select from 'react-select';
-const options = [
-    { value: 'development', label: 'Web Develoment' },
-    { value: 'designing', label: 'Designing' },
-    { value: 'java', label: 'Java' },
-    { value: 'block-chain', label: 'Block Chain' }
-  ]
+
+const categoryArr = [
+    {value: '', label: 'Select Category'},
+    {value: '', label: 'All'},
+    {value: 'Development', label: 'Development'},
+    {value: 'UI/UX', label: 'UI/UX'},
+    {value: 'Block Chain', label: 'Block Chain'},
+]
+
+const countryArr = [
+    {value: '', label: 'Select Country'},
+    {value: 'United State', label: 'United State'},
+    {value: 'UK', label: 'UK'},
+    {value: 'Pakistan', label: 'Pakistan'},
+]
 
 const FindTalent = () => {
+    const [talents, setTalents] = useState([])
+    const [category, setCategory] = useState("");
+    const [country, setCountry] = useState("");
+
+    const resetFilter = () => {
+        setCategory("");
+        setCountry("");
+    }
+
+    useEffect(() => {
+        // fetchTalents
+        var requestOptions = {
+          method: 'POST',
+          redirect: 'follow'
+        };
+        
+        fetch(`http://16.171.150.73/api/v1/getAllFreelancers`, requestOptions)
+          .then(response => response.text())
+          .then((result) =>{
+            let data = JSON.parse(result);
+            setTalents(data.freelancers);
+          })
+          .catch(error => console.log('error', error));
+      }, [])
+
   return (
     <>
       {/* <Row> */}
         <Col xs={12} xl={12} className="mb-4 mt-1">
           <Row>
-            <Col xs={12} xl={4}>
+            {/* Filter area */}
+            <Col xs={12} xl={4} className="mt-5 pe-0 ">
               <Row>
                 <Col xs={12} className="mb-4">
                   <Card className="no-border p-1">
                     <Card.Body>
-                        <h2 className="filter-title">Filters</h2>
+                    <Row>
+                            <Col xs={10} xl={10} md={10} sm={10}>
+                                <h2 className="filter-title">Filter By</h2>
+                            </Col>
+                            <Col xs={2} xl={2} md={2} sm={2}>
+                            {(category !== '' || country !== '') ? (
+                                <OverlayTrigger
+                                    overlay={<Tooltip id="top" className="m-0">Reset All Filter</Tooltip>}
+                                    
+                                    >
+                                    <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg" className="overlay-trigger" onClick={resetFilter}>
+                                        <path d="M22.5,9A7.4522,7.4522,0,0,0,16,12.792V8H14v8h8V14H17.6167A5.4941,5.4941,0,1,1,22.5,22H22v2h.5a7.5,7.5,0,0,0,0-15Z"/>
+                                        <path d="M26,6H4V9.171l7.4142,7.4143L12,17.171V26h4V24h2v2a2,2,0,0,1-2,2H12a2,2,0,0,1-2-2V18L2.5858,10.5853A2,2,0,0,1,2,9.171V6A2,2,0,0,1,4,4H26Z"/>
+                                        <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+                                    </svg>
+                                </OverlayTrigger>
+                            ):''}
+                            </Col>
+                        </Row>
+                        <hr />
+                        
                         <Col xs={12} xl={12} md={12} sm={12}>
-                            <Form>
-                                {/* category selection  */}
-                                <Form.Group className="mb-3">
-                                    <Form.Label className="get-paid-heading font-inter">Category</Form.Label>
-                                    <InputGroup className="input-group-merge">
-                                        <InputGroup.Text className=" project-count-subheading border-40">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-                                                <path d="M1 12.5H4.5C5.60457 12.5 6.5 13.3954 6.5 14.5V18" stroke="#495057" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M12.5 18V14.5C12.5 13.3954 13.3954 12.5 14.5 12.5H18" stroke="#495057" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M18 6.5H14.5C13.3954 6.5 12.5 5.60457 12.5 4.5V1" stroke="#495057" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M6.5 1V4.5C6.5 5.60457 5.60457 6.5 4.5 6.5H1" stroke="#495057" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </InputGroup.Text>
-                                        {/* <Form.Control type="text" placeholder="Developers, 1 Week, 2500$" className=" project-count-subheading border-40" /> */}
-                                        <Select
-                                            defaultValue={[0]}
-                                            placeholder="Web Development, Java"
-                                            isMulti
-                                            name="colors"
-                                            options={options}
-                                            className="basic-multi-select form-control project-count-subheading border-40 input-border-40-focus"
-                                            // classNamePrefix="select"
-                                        />
-                                    </InputGroup>
-                                </Form.Group>
-                                {/* Bidders */}
-                                <Form.Group className="mb-3">
-                                    <Form.Label className="get-paid-heading font-inter">Talent From</Form.Label>
-                                    <InputGroup className="input-group-merge">
-                                        <InputGroup.Text className=" project-count-subheading border-40">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <g clip-path="url(#clip0_557_1177)">
-                                                <path d="M6.33301 15.0003C6.33301 14.1163 6.6842 13.2684 7.30932 12.6433C7.93444 12.0182 8.78229 11.667 9.66634 11.667H16.333C17.2171 11.667 18.0649 12.0182 18.69 12.6433C19.3151 13.2684 19.6663 14.1163 19.6663 15.0003C19.6663 15.4424 19.4907 15.8663 19.1782 16.1788C18.8656 16.4914 18.4417 16.667 17.9997 16.667H7.99967C7.55765 16.667 7.13372 16.4914 6.82116 16.1788C6.5086 15.8663 6.33301 15.4424 6.33301 15.0003Z" stroke="#495057" stroke-opacity="0.6" stroke-width="2" stroke-linejoin="round"/>
-                                                <path d="M13 8.3335C14.3807 8.3335 15.5 7.21421 15.5 5.8335C15.5 4.45278 14.3807 3.3335 13 3.3335C11.6193 3.3335 10.5 4.45278 10.5 5.8335C10.5 7.21421 11.6193 8.3335 13 8.3335Z" stroke="#495057" stroke-opacity="0.6" stroke-width="2"/>
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip0_557_1177">
-                                                <rect width="20" height="20" fill="white"/>
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                        </InputGroup.Text>
-                                        <Form.Control type="text" placeholder="United States" className=" project-count-subheading border-40 input-border-40-focus"  style={{background: "#F3F6F9"}}/>
-                                    </InputGroup>
-                                </Form.Group>
-                                <Col xl={12} md={12} xs={12}>
-                                    <Button type="submit" className="w-100 m-1 proposal-submitBtn">Search</Button>
-                                </Col>
-                            </Form>
+                            {/* category selection  */}
+                            <Form.Group className="mb-3">
+                                <Form.Label className="get-paid-heading font-inter">Category</Form.Label>
+                                <InputGroup className="input-group-merge">
+                                    {/* <Form.Control type="text" placeholder="Developers, 1 Week, 2500$" className=" project-count-subheading line-height-30 line-height-30 border-40" /> */}
+                                    <Form.Select className=" project-count-subheading line-height-30 line-height-30 border-40 input-border-40-focus " value={category} onChange={(e)=>setCategory(e.target.value)}>
+                                        {categoryArr.map((item, i) => (
+                                            <option value={item.value} key={i}>
+                                                {item.label}
+                                            </option>
+                                        ))}
+                                    </Form.Select>
+                                </InputGroup>
+                            </Form.Group>
+                            {/* Country selection  */}
+                            <Form.Group className="mb-3">
+                                <Form.Label className="get-paid-heading font-inter">Country</Form.Label>
+                                <InputGroup className="input-group-merge">
+                                    {/* <Form.Control type="text" placeholder="Developers, 1 Week, 2500$" className=" project-count-subheading line-height-30 line-height-30 border-40" /> */}
+                                    <Form.Select className=" project-count-subheading line-height-30 line-height-30 border-40 input-border-40-focus " value={country} onChange={(e)=>setCountry(e.target.value)}>
+                                        {countryArr.map((item, i) => (
+                                            <option value={item.value} key={i}>
+                                                {item.label}
+                                            </option>
+                                        ))}
+                                    </Form.Select>
+                                </InputGroup>
+                            </Form.Group>
                         </Col>
                         <Col xs={12} xl={12} md={12} sm={12}>
                             <Form>
@@ -145,12 +178,12 @@ const FindTalent = () => {
                 </Col>
               </Row>
             </Col>
-
+            {/* Search item list  */}
             <Col xs={12} xl={8} className="mb-4 mt-1">
               <Row className="m-3">
                 <Col xs={12} xl={9} md={9} className="d-block mb-4 mb-md-0">
-                    <h6 className="get-paid-heading font-inter">140 search result for</h6>
-                    <h1 className="h2 job-like-title">Talent In United States</h1>
+                    <h6 className="get-paid-heading font-inter">{talents.length} search result for Talents</h6>
+                    {/* <h1 className="h2 job-like-title">Talents In United States</h1> */}
                     <p className="personal-tab-subheading">Find Talent Working In Your Country</p>
                 </Col>
                 <Col  xs={12} xl={3} md={3} className="d-block mb-4 mb-md-0">
@@ -163,7 +196,22 @@ const FindTalent = () => {
                         </Form.Select>
                     </Form.Group>
                 </Col>
-                <Col xs={12} className="mb-4 mt-2">
+                {(talents.length > 0) ? (
+                    <Row>
+                        {talents.map(talent => (
+                            <Col xs={12} className="mb-4 mt-2">
+                                <FindTalentWidget name={talent.username} speciality={talent.freelancerTitle}  skills={talent.skills} hourlyRate={talent.hourlyRate} profilImage={talent.profilImage} bio={talent.bio} totalEarned={talent.totalEarned} id={talent._id}/>
+                            </Col>
+                        ))}
+                    </Row>
+                ): (
+                    <Col xs={12} sm={12} xl={12} className="mb-4">
+                        <p className="proposal-post-date line-height-1">
+                            No Talents Found
+                        </p>
+                    </Col>
+                )}
+                {/* <Col xs={12} className="mb-4">
                   <FindTalentWidget />
                 </Col>
                 <Col xs={12} className="mb-4">
@@ -174,13 +222,10 @@ const FindTalent = () => {
                 </Col>
                 <Col xs={12} className="mb-4">
                   <FindTalentWidget />
-                </Col>
-                <Col xs={12} className="mb-4">
-                  <FindTalentWidget />
-                </Col>
-                <Col xs={12} className="mb-4">
+                </Col> */}
+                {/* <Col xs={12} className="mb-4">
                   <JobPagination />
-                </Col>
+                </Col> */}
               </Row>
             </Col>
           </Row>

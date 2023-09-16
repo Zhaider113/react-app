@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from "react";
 import { Col, Row, Card } from '@themesberg/react-bootstrap';
 
-import { WelcomeWidget, JobWidget, AlertNotice, ProjectList, CurrentCalender } from "../../components/Widgets";
+import { WelcomeWidget, AlertNotice, ProjectList, CurrentCalender, FindJobWidget } from "../../components/Widgets";
 
 const Dashbaord = () => {
   const [jobs, setJobs] = useState([])
@@ -20,6 +20,7 @@ const Dashbaord = () => {
         let data = JSON.parse(result);
         console.log(data);
         setJobs(data.jobs);
+
       })
       .catch(error => console.log('error', error));
   }
@@ -44,7 +45,7 @@ const Dashbaord = () => {
                 {(jobs.length > 0) ? (
                   <Col xs={12} sm={12} xl={12} className="mb-4">
                     {jobs.map(job => (
-                      <JobWidget title={job.title} type={job.type} budget={job.budget} createdAt={job.createdAt} description={job.description} skills={job.skills} />
+                      <FindJobWidget jobId={job._id} title={job.title} type={job.type} budget={job.budget} createdAt={job.createdAt} description={job.description} skills={job.skills} />
                     ))}
                   </Col>
                 ): (

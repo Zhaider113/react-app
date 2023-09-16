@@ -28,9 +28,9 @@ const Notification = () => {
                 <Form className="personal-tab-form">
                   <Col xs={12} xl={12} md={12} className="mb-2 mt-4">
                     <Row className="d-flex mt-3">
-                        <h4 className="mb-0 project-count-heading heading20">Most Recent</h4>
+                        <h1 className="mb-0 h2 job-like-title">Most Recent</h1>
                         <hr className="red-line"/>
-                      <Col xs={12} sm={12} md={12} >
+                      <Col xs={12} sm={12} md={12} className="mt-3">
                         <Alert
                           variant="light"
                           show={shouldShowAlert("pay")}

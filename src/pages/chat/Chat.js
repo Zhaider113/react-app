@@ -1,14 +1,22 @@
 
-import React from "react";
-import { Col, Row, Card, Image, InputGroup, Form } from '@themesberg/react-bootstrap';
+import React, { useEffect, useState } from "react";
+import { Col, Row, Card, Image, InputGroup, Form, Dropdown, Button } from '@themesberg/react-bootstrap';
 import Profile3 from "../../assets/img/team/avatar-1.png";
 import { UsersWidget } from "../../components/Widgets";
 import ScrollToBottom from "react-scroll-to-bottom";
+import Message from "./Message";//erro on this line
+import { faFileAlt, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const Chat = () => {
+  const [messages, setMessages] = useState([]);
+  useEffect(()=>{
+    setMessages(['hi brother', 'Hello world', 'Your new message', 'hi brother', 'Hello world', 'Your new message', 'hi brother', 'Hello world', 'Your new message', 'hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message'])
+  }, [])
   return (
     <>
-      <Row className="mt-4 p-3">
+      <Row className="mt-4 p-3 chat-div">
 
         <Col xs={12} xl={12} className="mb-4">
           <Row>
@@ -108,56 +116,55 @@ const Chat = () => {
                   </div>
                 </Card>
               </Row>
-              <Row className='user-chat-box'>
-                <ScrollToBottom>
-                  <p>
-                    Duis consectetur ad in fugiat et aliquip esse adipisicing occaecat et sunt ea occaecat ad. Tempor anim consequat
-                    commodo veniam nostrud sunt deserunt adipisicing Lorem Lorem magna irure. Eu ut ipsum magna nulla sunt duis Lorem
-                    officia pariatur. Nostrud nisi anim nostrud ea est do nostrud cupidatat occaecat dolor labore do anim. Laborum
-                    quis veniam ipsum ullamco voluptate sit ea qui adipisicing aliqua sunt dolor nulla. Nulla consequat sunt qui amet.
-                    Pariatur esse pariatur veniam non fugiat laboris eu nulla incididunt.
-                  </p>
-                  <p>
-                    Laborum
-                    quis veniam ipsum ullamco voluptate sit ea qui adipisicing aliqua sunt dolor nulla. Nulla consequat sunt qui amet.
-                    Pariatur esse pariatur veniam non fugiat laboris eu nulla incididunt.
-                  </p>
-                  <p>
-                    Duis consectetur ad in fugiat et aliquip esse adipisicing occaecat et sunt ea occaecat ad. Tempor anim consequat
-                    commodo veniam nostrud sunt deserunt adipisicing Lorem Lorem magna irure. Eu ut ipsum magna nulla sunt duis Lorem
-                    officia pariatur. Nostrud nisi anim nostrud ea est do nostrud cupidatat occaecat dolor labore do anim. Laborum
-                    quis veniam ipsum ullamco voluptate sit ea qui adipisicing aliqua sunt dolor nulla. Nulla consequat sunt qui amet.
-                    Pariatur esse pariatur veniam non fugiat laboris eu nulla incididunt.
-                  </p>
-                  <p>
-                    Laboris duis do consectetur aliquip non aliquip ad ad quis minim. Aute magna tempor occaecat magna fugiat culpa.
-                    Commodo id eiusmod ea pariatur consequat fugiat minim est anim. Ipsum amet ipsum eu nisi. Exercitation minim amet
-                    incididunt tempor do ut id in officia eu sit est. Dolor qui laboris laboris tempor sunt velit eiusmod non ipsum
-                    exercitation ut sint ipsum officia.
-                  </p>
-                  <p>
-                    Duis consectetur ad in fugiat et aliquip esse adipisicing occaecat et sunt ea occaecat ad. Tempor anim consequat
-                    commodo veniam nostrud sunt deserunt adipisicing Lorem Lorem magna irure. Eu ut ipsum magna nulla sunt duis Lorem
-                    officia pariatur. Nostrud nisi anim nostrud ea est do nostrud cupidatat occaecat dolor labore do anim. Laborum
-                    quis veniam ipsum ullamco voluptate sit ea qui adipisicing aliqua sunt dolor nulla. Nulla consequat sunt qui amet.
-                    Pariatur esse pariatur veniam non fugiat laboris eu nulla incididunt.
-                  </p>
-                  <p>
-                    Laborum
-                    quis veniam ipsum ullamco voluptate sit ea qui adipisicing aliqua sunt dolor nulla. Nulla consequat sunt qui amet.
-                    Pariatur esse pariatur veniam non fugiat laboris eu nulla incididunt.
-                  </p>
-                </ScrollToBottom>
-              </Row>
+              <ScrollToBottom className='user-chat-box'
+                behavior={'smooth'} 
+                buttonBackgroundColor={'red'}
+                iconType={'arrow-up'}
+                style= {{fontSize: '24px'}}
+              >
+                {/* <ScrollToBottom> */}
+                  {messages.map((message, i) =>
+                    <Message messages={message} classes={i%2===0?'incoming':'outgoing'} item={i%2} />
+                  )}
+                {/* </ScrollToBottom> */}
+              </ScrollToBottom>
               <Row className="user-chat-input pt-2">
                 <Card border="ligth" className="shadow-sm">
-                  <Form.Group id="username" className="mb-4">
-                      <Form.Control autoFocus required type="username" placeholder="User Name" className="input-field"/>
-                  </Form.Group>
+                  <Row className="mt-2">
+                    <Col xs={11} xl={11} md={11} className="pe-0">
+                      <div className="d-flex align-items-center">
+                        <Dropdown>
+                          <Dropdown.Toggle className="text-dark bg-light-pink">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                              <path d="M12 5V19" stroke="#1C1D22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M5 12H19" stroke="#1C1D22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu className="dashboard-dropdown dropdown-menu-left mt-2">
+                            <Dropdown.Item>
+                              <FontAwesomeIcon icon={faFileAlt} className="me-2" /> Document
+                            </Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                        <Form.Group className="mx-2 w-100">
+                          <InputGroup className="input-group-merge">
+                              <Form.Control type="text" placeholder="Type your message..." className=" project-count-subheading chat-search" />
+                          </InputGroup>
+                          
+                        </Form.Group>
+                      </div>
+                    </Col>
+                    <Col xs={1} xl={1} md={1} className="ps-0">
+                      <div className="d-flex align-items-center m-top">
+                        <Button className="bg-light-blue"> 
+                          <FontAwesomeIcon icon={faPaperPlane} className="" />
+                        </Button>
+                      </div>
+                    </Col>
+                  </Row>
                 </Card>
               </Row>
             </Col>
-
           </Row>
         </Col>
       </Row>
