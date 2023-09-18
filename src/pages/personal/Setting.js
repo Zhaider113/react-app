@@ -36,8 +36,8 @@ const Setting = () => {
     <>
     
       <Tab.Container defaultActiveKey="personal">
-        <Row  className="mt-4 p-3">
-          <Col lg={3} md={12} sm={12} xs={12}>
+        <Row className="mt-4 p-3">
+          <Col lg={3} md={6} sm={12} xs={12}>
             <Card border="light" className="shadow-sm profile-detail-nav">
                 <Nav fill variant="pills" className="flex-column vertical-tab">
                   <Nav.Item>
@@ -101,7 +101,7 @@ const Setting = () => {
                 </Nav>
             </Card>
           </Col>
-          <Col lg={9} md={12} sm={12} xs={12}>
+          <Col lg={9} md={6} sm={12} xs={12}>
             <Tab.Content>
               <Tab.Pane eventKey="personal">
                 <Form className="personal-tab-form">

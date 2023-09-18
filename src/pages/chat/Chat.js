@@ -4,7 +4,7 @@ import { Col, Row, Card, Image, InputGroup, Form, Dropdown, Button } from '@them
 import Profile3 from "../../assets/img/team/avatar-1.png";
 import { UsersWidget } from "../../components/Widgets";
 import ScrollToBottom from "react-scroll-to-bottom";
-import Message from "./Messages";
+import Message from "../../pages/chat/messages.JS";
 import { faFileAlt, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

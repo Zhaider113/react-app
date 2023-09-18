@@ -48,13 +48,13 @@ const Dashboard = () => {
                 </Col>
               </Row>
               <Row>
-                <Col xs={4} xl={4} md={4} className="mb-4">
+                <Col xs={12} xl={4} md={12} sm={12}   className="mb-4">
                   <ProfileCardWidget name="Maria Graciela M." jobType="AI Developer" star="5.0" jobs="53" image={Profile1}/>
                 </Col>
-                <Col xs={4} xl={4} md={4} className="mb-4">
+                <Col xs={12} xl={4} md={12} sm={12}  className="mb-4">
                   <ProfileCardWidget name="Alexander S." jobType="AI Developer" star="5.0" jobs="53" image={Profile2}/>
                 </Col>
-                <Col xs={4} xl={4} md={4} className="mb-4">
+                <Col xs={12} xl={4} md={12} sm={12}  className="mb-4">
                   <ProfileCardWidget name="Elena S." jobType="AI Developer" star="5.0" jobs="53" image={Profile3}/>
                 </Col>
               </Row>
