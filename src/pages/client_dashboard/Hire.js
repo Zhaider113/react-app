@@ -1,15 +1,27 @@
 
 
+<<<<<<< HEAD
 import React, {useCallback, useEffect, useState} from "react";
 import { Col, Row, Card, Button, Form, Modal } from '@themesberg/react-bootstrap';
 import { useHistory, useParams} from "react-router-dom";
 import cogoToast from 'cogo-toast';
 import moment from "moment-timezone";
+=======
+import React, {useEffect, useState} from "react";
+import { Col, Row, Card, Button, Form, Modal } from '@themesberg/react-bootstrap';
+import { useHistory} from "react-router-dom";
+import cogoToast from 'cogo-toast';
+// import moment from "moment-timezone";
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
 
 const user = JSON.parse(localStorage.getItem('user'));
 
 const estimateTimeArr = [
+<<<<<<< HEAD
     {value: '', label: 'Select a duration'},
+=======
+    {value: 'Select a duration', label: 'Select a duration'},
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     {value: 'More than 6 Months', label: 'More than 6 Months'},
     {value: '3 to 6 months', label: '3 to 6 months'},
     {value: '1 to 3 months', label: '1 to 3 months'},
@@ -17,12 +29,19 @@ const estimateTimeArr = [
 ]
 
 const HireFreelancer = () => {
+<<<<<<< HEAD
     const { jobId, freelancerId } = useParams();
+=======
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     const history = useHistory();
     const [price, setPrice] = useState("");
     const [detail, setDetail] = useState("");
     const [estimateTime, setEstimateTime] = useState("");
     const [isSubmitting, setSubmitting] = useState(false);
+<<<<<<< HEAD
+=======
+    let job = JSON.parse(localStorage.getItem('jobId'));
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     const [jobs, setJobs] = useState([])
     const regex = /(<([^>]+)>)/ig;
     const removeTags =(text)=>{
@@ -36,6 +55,7 @@ const HireFreelancer = () => {
     const [numberOnCard, setNumberOnCard] = useState('');
     const [ExpDateOnCard, setExpDateOnCard] = useState('');
     const [cvcOnCard, setCVCOnCard] = useState('');
+<<<<<<< HEAD
     const handleClose = () => setShowDefault(true);
     const [loading, setLoading] = useState(false);
     const [pay, setPaid] = useState(false);
@@ -70,12 +90,17 @@ const HireFreelancer = () => {
           history.push("/client-proposal");
         });
     },[history, freelancerId])
+=======
+    const handleClose = () => setShowDefault(false);
+    
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
 
     useEffect(() => {
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
+<<<<<<< HEAD
       if(jobId !== null){
         fetch(`http://16.171.150.73/api/v1/getSingleJob/${jobId}`, requestOptions)
         .then(response => response.text())
@@ -101,11 +126,26 @@ const HireFreelancer = () => {
         });
       }else{
         cogoToast.error("Someting went's wrong...!",{
+=======
+      if(job !== null){
+        fetch(`http://16.171.150.73/api/v1/getSingleJob/${job.id}`, requestOptions)
+        .then(response => response.text())
+        .then((result) =>{
+          let data = JSON.parse(result);
+            setJobs(data.job);
+        })
+        .catch(error => {
+          history.push('/job');
+        });
+      }else{
+        cogoToast.error("Proposal to hire!",{
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
           position: 'top-right',
           hideAfter: 3,
         });
         history.push("/client-proposal");
       }
+<<<<<<< HEAD
     }, [history, jobId, checkFreelancer, freelancerId])
 
     // show payment model
@@ -151,33 +191,79 @@ const HireFreelancer = () => {
             let errorMsg = false;
             if(nameOnCard === ''){
                 cogoToast.error("Card Name Require!",{
+=======
+    }, [history, job])
+
+    const showPayment = () =>{
+      let errorMsg = false;
+            if(price === ''){
+                cogoToast.error("Project Budget Require!",{
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                     position: 'top-right',
                     hideAfter: 3,
                 });   
                 errorMsg = true;    
             }
+<<<<<<< HEAD
             if(numberOnCard === ""){
                 cogoToast.error("Card Number Required!",{
+=======
+            if(estimateTime === undefined && estimateTime === ''){
+                cogoToast.error("Estimate Time Required!",{
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                     position: 'top-right',
                     hideAfter: 3,
                 });  
                 errorMsg = true;     
             }
+<<<<<<< HEAD
             if(ExpDateOnCard === ''){
                 cogoToast.error("Exp Date Required!",{
-                    position: 'top-right',
-                    hideAfter: 3,
-                });   
-                errorMsg = true;    
-            }
-            if(cvcOnCard === ''){
-                cogoToast.error("CVC Required!",{
+=======
+            if(detail === undefined && detail === ''){
+                cogoToast.error("Project Detail Required!",{
                     position: 'top-right',
                     hideAfter: 3,
                 });   
                 errorMsg = true;    
             }
             if(!errorMsg){
+              setShowDefault(true)
+            }
+    }
+
+    const hireFreelancer = ()=>{
+        try {
+            let errorMsg = false;
+            if(price === ''){
+                cogoToast.error("Project Budget Require!",{
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
+                    position: 'top-right',
+                    hideAfter: 3,
+                });   
+                errorMsg = true;    
+            }
+<<<<<<< HEAD
+            if(cvcOnCard === ''){
+                cogoToast.error("CVC Required!",{
+=======
+            if(estimateTime === undefined && estimateTime === ''){
+                cogoToast.error("Estimate Time Required!",{
+                    position: 'top-right',
+                    hideAfter: 3,
+                });  
+                errorMsg = true;     
+            }
+            if(detail === undefined && detail === ''){
+                cogoToast.error("Project Detail Required!",{
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
+                    position: 'top-right',
+                    hideAfter: 3,
+                });   
+                errorMsg = true;    
+            }
+            if(!errorMsg){
+<<<<<<< HEAD
               if(pay){
                 setLoading(true);
               }else{
@@ -220,12 +306,52 @@ const HireFreelancer = () => {
                     })
                     .catch(error => console.log('error', error));
               }
+=======
+               
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+    
+                // let jobDetail = {budget: price, detail: detail, estimateTime: estimateTime};
+                
+                // var requestOptions = {
+                //     method: 'POST',
+                //     headers: myHeaders,
+                //     body: JSON.stringify(jobDetail),
+                //     redirect: 'follow'
+                // };
+                console.log(user, "user", user._id)
+                setSubmitting(true);
+                cogoToast.success("Your Offer Has Been Sent To Freelancer Successfully..!",{
+                  position: 'top-right',
+                  hideAfter: 3,
+                });
+                history.push('/contracts')
+                // fetch(`http://16.171.150.73/api/v1//${user._id}`, requestOptions)
+                //     .then(response => response.text())
+                //     .then((result) => {
+                //         let data = JSON.parse(result);
+                //         if(data.success) {
+                //             cogoToast.success(data.message,{
+                //               position: 'top-right',
+                //               hideAfter: 3,
+                //             });
+                //             history.push("/contracts")
+                //           }
+                //           else{
+                //             cogoToast.error(data.message,{
+                //               position: 'top-right',
+                //               hideAfter: 3,
+                //             });
+                //           }
+                //     })
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
             }else{
                 errorMsg = false;   
             }
             
 
         } catch (error) {
+<<<<<<< HEAD
           cogoToast.error(error.message,{
               position: 'top-right',
               hideAfter: 3,
@@ -280,6 +406,13 @@ const HireFreelancer = () => {
           hideAfter: 3,
         });
       }
+=======
+            cogoToast.error(error.message,{
+                position: 'top-right',
+                hideAfter: 3,
+              });
+        }
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     }
 
     const chackNumber = (value, field)=>{
@@ -293,6 +426,7 @@ const HireFreelancer = () => {
   return (
     
     <>
+<<<<<<< HEAD
         <Row className="mt-4 p-4">
 
           <Col xs={12} xl={8} className="mb-4 offset-2">
@@ -343,6 +477,66 @@ const HireFreelancer = () => {
         <Modal as={Modal.Dialog} centered show={showDefault} onHide={handleClose} className="paymentModel" >
         <Modal.Body>
           <Col xs={12} xl={12} md={12} className="mt-4">
+=======
+      <Row className="mt-4 p-4">
+
+        <Col xs={12} xl={8} className="mb-4 offset-2">
+        <h1 className="job-like-title submit-project-heading2">Hire Freelancer for {jobs.title}</h1>
+          <Card border="light" className="shadow-sm">
+            <Card.Body>
+                <Row>
+                    <h4 className="mb-0 project-count-heading heading20">Job Detail</h4>
+                    <hr className="red-line"/>
+                    <Col xs={12} sm={12} md={12} className="mb-3" >
+                      <p className="proposal-detail">
+                        {removeTags(jobs.description)}
+                      </p>
+                    </Col>
+                    <Col md={12} className="mb-3">
+                        <Form.Group id="price">
+                            <Form.Label>Project Budget (USD)</Form.Label>
+                            <Form.Control className="proposal-inputs" required type="number" placeholder="100" value={price} onChange={(e)=>setPrice(e.target.value)}/>
+                        </Form.Group>
+                    </Col>
+                    <Col md={12} className="mb-3">
+                        <Form.Group id="estimateTime">
+                            <Form.Label>Duration</Form.Label>
+                            <Form.Select className="proposal-inputs" value={estimateTime} onChange={(e)=>setEstimateTime(e.target.value)}>
+                                {estimateTimeArr.map((item, i) => (
+                                    <option value={item.value} key={i}>
+                                        {item.label}
+                                    </option>
+                                ))}
+                            </Form.Select>
+                        </Form.Group>
+                    </Col>
+                    {/* <Col md={12} className="mb-3">
+                        <ClientLinkInput />
+                    </Col> */}
+                    <Col xs={12} sm={12} md={12} className="mt-3">
+                    <strong>
+                                <h6 className="mb-3 get-paid-heading">Description</h6>
+                              </strong>
+                              <textarea name="" id="" className="cover-text" rows="10" placeholder="Write Summery of Proposal!" onChange={(text)=>{setDetail(text.target.value)}} value={detail} />
+                    </Col>
+                    <Col xs={12} sm={12} md={4} lg={4} xl={4} className="mt-3 offset-8">
+                      <Button disabled={isSubmitting} onClick={showPayment} className="m-1 personal-tab-update">{isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}Make Offer</Button>
+                    </Col>
+                </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+      {/* Payment Popup model  */}
+      <Modal as={Modal.Dialog} centered show={showDefault} onHide={handleClose} className="paymentModel">
+        <Modal.Body>
+          <Col xs={12} xl={12} md={12} className="mt-4">
+            {/* <Row>
+              <Col xs={12} sm={12} xl={12} >
+                <h6 className="job-like-title submit-project-heading2">Payment Card Information</h6>
+              </Col>
+            </Row> */}
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
             <Row className="d-flex mt-3">
               <Col xs={12} sm={12} xl={12} className="text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="268.825" height="170.244" viewBox="0 0 268.825 170.244">
@@ -394,7 +588,11 @@ const HireFreelancer = () => {
               <Col xs={12} sm={12} md={12} xl={12} className="mb-3">
                 <Form.Group id="card_number">
                     <Form.Label>Card Number</Form.Label>
+<<<<<<< HEAD
                     <Form.Control className="proposal-inputs" maxLength="19" required type="password" placeholder="**** **** **** ****" value={numberOnCard} onChange={(e)=>chackNumber(e.target.value, 'card')}/>
+=======
+                    <Form.Control className="proposal-inputs" maxlength="19" required type="password" placeholder="**** **** **** ****" value={numberOnCard} onChange={(e)=>chackNumber(e.target.value, 'card')}/>
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                     
                 </Form.Group>
               </Col>
@@ -408,17 +606,26 @@ const HireFreelancer = () => {
               <Col xs={5} sm={5} md={5} xl={5} className="mb-3">
                 <Form.Group id="cvc">
                     <Form.Label>CVV</Form.Label>
+<<<<<<< HEAD
                     <Form.Control className="proposal-inputs" required type="text" minLength={0} maxLength="3" placeholder="000" value={cvcOnCard} onChange={(e)=>chackNumber(e.target.value, 'cvc')}/>
+=======
+                    <Form.Control className="proposal-inputs" required type="text" minLength={0} maxlength="3" placeholder="000" value={cvcOnCard} onChange={(e)=>chackNumber(e.target.value, 'cvc')}/>
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                 </Form.Group>
               </Col>
             </Row>
             <Row className="d-flex mt-3 text-center">
               <Col xs={12} sm={12} xl={12} >
+<<<<<<< HEAD
                 <Button className="m-1 proposal-submitBtn  upwork-btn-apply" onClick={payNow}>Apply Now</Button>
+=======
+                <Button className="m-1 proposal-submitBtn  upwork-btn-apply" onClick={hireFreelancer}>Apply Now</Button>
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
               </Col>
             </Row>
           </Col>
         </Modal.Body>
+<<<<<<< HEAD
         </Modal>
 
         <Modal as={Modal.Dialog} centered show={loading} onHide={handleLoadingClose}  className="loaderModel">
@@ -428,6 +635,9 @@ const HireFreelancer = () => {
           </div>
         {/* </Modal.Body> */}
         </Modal>
+=======
+      </Modal>
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     </>
   );
 };

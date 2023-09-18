@@ -278,6 +278,10 @@
   }
   .job-like-title{
     color: #000;
+<<<<<<< HEAD
+=======
+    font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
@@ -285,6 +289,10 @@
   }
   .job-title{
     color: #1680FB;
+<<<<<<< HEAD
+=======
+    font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -325,6 +333,10 @@
     border-radius: 14px;
     background: #F4F4F4;
     color: #000;
+<<<<<<< HEAD
+=======
+    font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     font-size: 12px;
     padding: 0 10px !important;
     font-style: normal;
@@ -587,6 +599,10 @@
   }
   .fund-subheading{
     color: #5e6d55;
+<<<<<<< HEAD
+=======
+    font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -695,6 +711,10 @@
   .custome-select{
     /* color: #000000; */
     text-align: center;
+<<<<<<< HEAD
+=======
+    font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -949,6 +969,10 @@
   }
   .review-text{
     color: #000;
+<<<<<<< HEAD
+=======
+    font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -1094,6 +1118,10 @@
 }
 .filter-title{
   color: #495057;
+<<<<<<< HEAD
+=======
+  font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -1328,6 +1356,10 @@
     font-size: 26px;
     font-weight: 500;
     color: #001e00;
+<<<<<<< HEAD
+=======
+    font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     font-style: normal;
  }
  .sub-heading{
@@ -1337,6 +1369,10 @@
  }
  .role-btn{
     color: #1680FB;
+<<<<<<< HEAD
+=======
+    font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -1349,6 +1385,10 @@
  }
  .role-btn-active{
     color: #FFF;
+<<<<<<< HEAD
+=======
+    font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -1397,6 +1437,10 @@
   margin: 1rem;
   border-radius: 3px;
   display: inline-block;
+<<<<<<< HEAD
+=======
+  font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1410,6 +1454,10 @@
   vertical-align: top;
   width: 92%;
   display: inline-block;
+<<<<<<< HEAD
+=======
+  font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1460,6 +1508,10 @@
   width: 46%;
   vertical-align: top;
   display: inline-block;
+<<<<<<< HEAD
+=======
+  font-family: 'Inter', sans-serif;
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1509,6 +1561,7 @@
   border: none;
   padding: 3px;
 }
+<<<<<<< HEAD
 .loaderModel .modal-content{
   background: transparent;
   box-shadow: none;
@@ -1537,3 +1590,5 @@
       transform: rotate(360deg);
   }
 }
+=======
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0

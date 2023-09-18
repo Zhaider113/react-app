@@ -3,7 +3,11 @@ import React, {useEffect, useState, useCallback} from "react";
 import { Col, Row, Card, Button, Form, Badge } from '@themesberg/react-bootstrap';
 import { StarReviewComponent } from "../../components/Widgets";
 import { Routes } from "../../routes";
+<<<<<<< HEAD
 import { Link, useHistory, useParams } from "react-router-dom";
+=======
+import { Link, useHistory } from "react-router-dom";
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
 import {useDropzone} from 'react-dropzone';
 
 import cogoToast from 'cogo-toast';
@@ -43,11 +47,15 @@ const SubmitProposal = () => {
       .then(response => response.text())
       .then((result) =>{
         let data = JSON.parse(result);
+<<<<<<< HEAD
         if(data.success){
+=======
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
           setJobs(data.job);
           setSkill(data.job.skills);
           setJobPosted(data.job.postedBy.postedJobs) 
           setCountry(data.job.postedBy.country) 
+<<<<<<< HEAD
         }else{
           cogoToast.error(data.message,{
             position: 'top-right',
@@ -55,6 +63,8 @@ const SubmitProposal = () => {
           });
           history.push('/job');
         }
+=======
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
       })
       .catch(error => {
         cogoToast.error(error.message,{
@@ -64,6 +74,7 @@ const SubmitProposal = () => {
         history.push('/job');
       });
   }, [history, id])
+
 
 
   // submit proposal
@@ -239,7 +250,11 @@ const SubmitProposal = () => {
                       <h4 className="mb-0 project-count-heading sub-heading">Skills and expertise</h4>
                       <hr className="red-line  border-bottom"/>
                       {/* {jobSkill  && ( */}
+<<<<<<< HEAD
                         <Col xs={12} sm={12} md={12} className="mt-3">
+=======
+                        <Col xs={12} sm={12} md={12} >
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                           {jobSkill.map((item, i) => (
                           <Badge className="me-1 bg-light-red">{item}</Badge>
                         ))}

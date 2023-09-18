@@ -50,7 +50,11 @@ const Proposal =  () => {
                 <Col xs={12} xl={12} md={12} className="mb-2 mt-4">
                   <Card border="light" className="shadow-sm mb-4">
                     <Card.Body>
+<<<<<<< HEAD
                       <h6 className="h2 job-like-title">Active Proposal ({totalProposals})</h6>
+=======
+                      <h6 className="proposal-post-title">Active Proposal ({totalProposals})</h6>
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                       {(proposals.length > 0) ? (
                         <Row className="d-flex align-items-center border-bottom border-light mt-3">
                           {proposals.map(proposal => (

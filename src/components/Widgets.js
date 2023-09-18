@@ -567,13 +567,18 @@ export const ProposalWidget = (props) => {
         </p>
       </Col>
       <Col xs={3} sm={3} md={3}>
+<<<<<<< HEAD
         <Card.Link onClick={()=>{ViewProposal(proposalId)}} className="proposal-submit font-500">
+=======
+        <Card.Link onClick={()=>{ViewProposal(proposalId)}} className="proposal-submit">
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
           View Proposal
         </Card.Link>
       </Col>
     </>
   );
 };
+<<<<<<< HEAD
 
 // Find Offers List 
 export const ListWidget = (props) => {
@@ -606,6 +611,8 @@ export const ListWidget = (props) => {
     </>
   );
 };
+=======
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
 
 // Image Dropbox 
 export const ImageDrop = () => {
@@ -1251,9 +1258,18 @@ export const ClientProposal = (props) => {
   let {title, proposalData} = props;
   const history = useHistory();
   const ViewProposal = (id)=>{
+<<<<<<< HEAD
     if(id){
       history.push(generatePath('/view-proposal/:id', { id }));
     } 
+=======
+    console.log(id)
+    if(id){
+      localStorage.removeItem('proposal');
+      localStorage.setItem('proposal', JSON.stringify({"id":id}));
+      history.push('/view-proposal');
+    }
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   }
   return (
     <>
@@ -1271,7 +1287,11 @@ export const ClientProposal = (props) => {
           </p>
         </Col>
         <Col xs={3} sm={3} md={3}>
+<<<<<<< HEAD
           <Card.Link onClick={()=>{ViewProposal(proposal.id)}} className="proposal-submit font-500">
+=======
+          <Card.Link onClick={()=>{ViewProposal(proposal.id)}} className="proposal-submit">
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
             View Proposal
           </Card.Link>
         </Col>

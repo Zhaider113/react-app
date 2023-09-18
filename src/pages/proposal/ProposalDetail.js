@@ -8,7 +8,11 @@ import cogoToast from 'cogo-toast';
 
 const ProposalDetail = () => {
   const history = useHistory();
+<<<<<<< HEAD
   const { id } = useParams();
+=======
+  let proposal = JSON.parse(localStorage.getItem('proposal'));
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   // const user = JSON.parse(localStorage.getItem('user'));
 
   const [proposalData, setProposal] = useState([])
@@ -24,14 +28,22 @@ const ProposalDetail = () => {
   const [jobPosted, setPosted] = useState([]);
   const [jobCountry, setJobCountry] = useState([]);
 
+<<<<<<< HEAD
   const viewDetail = (jobId)=>{
+=======
+  const viewDetail = (id)=>{
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
 
         var requestOptions = {
           method: 'GET',
           redirect: 'follow'
         };
         
+<<<<<<< HEAD
         fetch(`http://16.171.150.73/api/v1/getSingleJob/${jobId}`, requestOptions)
+=======
+        fetch(`http://16.171.150.73/api/v1/getSingleJob/${id}`, requestOptions)
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
           .then(response => response.text())
           .then((result) =>{
             let data = JSON.parse(result);
@@ -47,7 +59,11 @@ const ProposalDetail = () => {
       redirect: 'follow'
     };
     
+<<<<<<< HEAD
     fetch(`http://16.171.150.73/api/v1/getSingleProposal/${id}`, requestOptions)
+=======
+    fetch(`http://16.171.150.73/api/v1/getSingleProposal/${proposal.id}`, requestOptions)
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
       .then(response => response.text())
       .then((result) =>{
         let data = JSON.parse(result);
@@ -64,7 +80,11 @@ const ProposalDetail = () => {
         });
         history.push('/proposal');
       });
+<<<<<<< HEAD
   }, [history, id]);
+=======
+  }, [history, proposal.id]);
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   return (
     <>
       <Row className="mt-4 p-4">
@@ -143,7 +163,11 @@ const ProposalDetail = () => {
                       <p className="withdrwa-subheading">The estimated payment, after service fees.</p>
                       <p className="withdrwa-subheading text-light-blue">${proposalData.totalPriceAfterFee}</p>
                     </Col>
+<<<<<<< HEAD
                     <Col md={12} className="mt-2">
+=======
+                    <Col md={12} className="mt-3">
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                       <Button type="submit" className="m-1 proposal-submitBtn">Edit Proposals</Button>
                       <Button as={Link} to={Routes.WithdrawProposal.path} className=" m-1 proposal-cancelBtn">Withdraw Proposal</Button>
                     </Col>

@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from "react";
 import { Col, Row, Card, Button, Badge, Image } from '@themesberg/react-bootstrap';
 import { ProjectTrackerCounts } from "../../components/Widgets";
+<<<<<<< HEAD
 import {  generatePath, useHistory, useParams } from "react-router-dom";
 import { faComment, faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +13,16 @@ const ProposalDetail = () => {
   const history = useHistory();
   // let proposal = JSON.parse(localStorage.getItem('proposal'));
   let {id} = useParams();
+=======
+
+import {  useHistory } from "react-router-dom";
+import { faComment, faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const ProposalDetail = () => {
+  const history = useHistory();
+  let proposal = JSON.parse(localStorage.getItem('proposal'));
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   // const user = JSON.parse(localStorage.getItem('user'));
 
   const [proposalData, setProposal] = useState([])
@@ -26,13 +37,21 @@ const ProposalDetail = () => {
     const [freelancerDetail, setFreelancer] = useState([]);
     const [freelancerSkill, setSkill] = useState([])
 
+<<<<<<< HEAD
   const getFreelancer = (frelancerId)=>{
+=======
+  const getFreelancer = (id)=>{
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
       
+<<<<<<< HEAD
       fetch(`http://16.171.150.73/api/v1/UserProfile/${frelancerId}`, requestOptions)
+=======
+      fetch(`http://16.171.150.73/api/v1/UserProfile/${id}`, requestOptions)
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
         .then(response => response.text())
         .then(result => {
             let data = JSON.parse(result);
@@ -44,12 +63,20 @@ const ProposalDetail = () => {
 
   const HireFreelancer = (jobId, freelancerId) =>{
     if(jobId && freelancerId){
+<<<<<<< HEAD
         history.push(generatePath('/hire/:jobId/:freelancerId', { jobId: jobId, freelancerId: freelancerId }));
       // localStorage.removeItem('freelancerId');
       // localStorage.setItem('freelancerId', JSON.stringify({"id":freelancerId}));
       // localStorage.removeItem('jobId');
       // localStorage.setItem('jobId', JSON.stringify({"id":jobId}));
       // history.push('/hire');
+=======
+      localStorage.removeItem('freelancerId');
+      localStorage.setItem('freelancerId', JSON.stringify({"id":freelancerId}));
+      localStorage.removeItem('jobId');
+      localStorage.setItem('jobId', JSON.stringify({"id":jobId}));
+      history.push('/hire');
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     }
   }
   useEffect(() => {
@@ -58,6 +85,7 @@ const ProposalDetail = () => {
       redirect: 'follow'
     };
     
+<<<<<<< HEAD
     fetch(`http://16.171.150.73/api/v1/getSingleProposal/${id}`, requestOptions)
       .then(response => response.text())
       .then((result) =>{
@@ -82,6 +110,22 @@ const ProposalDetail = () => {
         history.push('/client-proposal');
       });
   }, [history, id]);
+=======
+    fetch(`http://16.171.150.73/api/v1/getSingleProposal/${proposal.id}`, requestOptions)
+      .then(response => response.text())
+      .then((result) =>{
+        let data = JSON.parse(result);
+        console.log(data)
+        setProposal(data.proposal);
+        setJob(data.proposal.job);
+        getFreelancer(data.proposal.bidder);
+      })
+      .catch(error => {
+        console.log(error, "Error")
+        history.push('/proposal');
+      });
+  }, [history, proposal.id]);
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   return (
     <>
       <Row className="mt-4 p-4">
@@ -124,7 +168,11 @@ const ProposalDetail = () => {
                   <Row className="d-flex mt-3">
                       <h4 className="mb-0 project-count-heading heading20">You'll Receive</h4>
                       <hr className="red-line  border-bottom"/>
+<<<<<<< HEAD
                     <Col xs={12} sm={12} md={12} className="mt-3">
+=======
+                    <Col xs={12} sm={12} md={12} >
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                       <p className="withdrwa-subheading">The estimated payment, after service fees.</p>
                       <p className="withdrwa-subheading text-light-blue">${proposalData.totalPriceAfterFee}</p>
                     </Col>
@@ -132,14 +180,22 @@ const ProposalDetail = () => {
                   <Row className="d-flex mt-3">
                       <h4 className="mb-0 project-count-heading heading20">Cover Letter</h4>
                       <hr className="red-line"/>
+<<<<<<< HEAD
                     <Col xs={12} sm={12} md={12}  className="mt-3">
+=======
+                    <Col xs={12} sm={12} md={12} >
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                       <p className="proposal-detail">{removeTags(proposalData.additionalInfo)}</p>
                     </Col>
                   </Row>
                   <Row className="d-flex mt-3">
                       <h4 className="mb-0 project-count-heading heading20">About Freelancer</h4>
                       <hr className="red-line  border-bottom"/>
+<<<<<<< HEAD
                     <Col xs={12} sm={12} md={12}  className="mt-3">
+=======
+                    <Col xs={12} sm={12} md={12} >
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                       {/* <StarReviewComponent /> */}
                       <Row>
                         <Col xs={1} sm={1} md={1} >
@@ -163,7 +219,11 @@ const ProposalDetail = () => {
                   <Row className="d-flex mt-3">
                       <h4 className="mb-0 project-count-heading heading20">Skills Required </h4>
                       <hr className="red-line  border-bottom"/>
+<<<<<<< HEAD
                       <Col xs={12} sm={12} md={12}  className="mt-3">
+=======
+                      <Col xs={12} sm={12} md={12} >
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                         {freelancerSkill.map((item, i) => (
                           <Badge className="me-1 bg-light-red">{item}</Badge>
                         ))}

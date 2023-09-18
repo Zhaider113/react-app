@@ -2,11 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Card } from '@themesberg/react-bootstrap';
 
+<<<<<<< HEAD
 import { ListWidget, ProjectTrackerCounts } from "../../components/Widgets";
+=======
+import { ProjectTrackerCounts, ProposalWidget } from "../../components/Widgets";
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
 
 const MyProposal = () => {
   // console.log("usr", user)
   
+<<<<<<< HEAD
   
   const user = JSON.parse(localStorage.getItem('user'));
   
@@ -14,6 +19,14 @@ const MyProposal = () => {
   const [proposal, setProposal] = useState([]);
   const getAllProposals = ()=>{
     var requestOptions = {
+=======
+  const [proposal, setProposal] = useState([]);
+  
+  const user = JSON.parse(localStorage.getItem('user'));
+
+  useEffect(() => {
+      var requestOptions = {
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
       method: 'GET',
       redirect: 'follow'
     };
@@ -28,6 +41,7 @@ const MyProposal = () => {
 
       })
       .catch(error => console.log('error', error));
+<<<<<<< HEAD
   }
 
   // get all freelancer offers
@@ -54,6 +68,9 @@ const MyProposal = () => {
       getAllProposals();
       getAllOffers();
   })
+=======
+  }, [user._id])
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   return (
     <>
       <Row className="mt-4 p-3">
@@ -72,6 +89,7 @@ const MyProposal = () => {
                     <Card.Body>
                       <Row>
                         <Col xs={12} sm={12} xl={12} >
+<<<<<<< HEAD
                           <h6 className="h2 job-like-title">Offers ({offer.length})</h6>
                         </Col>
                       </Row>
@@ -98,12 +116,19 @@ const MyProposal = () => {
                       <Row>
                         <Col xs={12} sm={12} xl={12} >
                           <h6 className="h2 job-like-title">Submitted Proposals ({proposal.length})</h6>
+=======
+                          <h6 className="proposal-post-title">Submitted Proposals ({proposal.length})</h6>
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                         </Col>
                       </Row>
                       {(proposal.length > 0) ? (
                         <Row className="d-flex align-items-center border-bottom border-light mt-3">
                           {proposal.map(proposal => (
+<<<<<<< HEAD
                             <ListWidget createdAt={proposal.job.createdAt} postedAt={proposal.submittedAt} heading={proposal.job.title} itemId={proposal._id} detailLink={'/proposal-detail/:id'} linkTitle={'View Proposal'} />
+=======
+                            <ProposalWidget submittedAt={proposal.submittedAt} jobCreatedAt={proposal.job.createdAt} jobTitle={proposal.job.title} proposalId={proposal._id} />
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
                           ))}
                         </Row>
                         ):(

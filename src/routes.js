@@ -7,8 +7,13 @@ export const Routes = {
     ClientDashboard: { path: "/client-dashboard" },
     FreelancerDashboard: { path: "/freelancer-dashboard" },
     ClientProposal: { path: "/client-proposal" },
+<<<<<<< HEAD
     ClientViewProposal: { path: "/view-proposal/:id" },
     HireFreelancer: { path: "/hire/:jobId/:freelancerId" },
+=======
+    ClientViewProposal: { path: "/view-proposal" },
+    HireFreelancer: { path: "/hire" },
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
     PostJob: { path: "/post-job" },
     ClientProfile: { path: "/client-profile" },
     TalentSearch: { path: "/talent" },
@@ -24,7 +29,11 @@ export const Routes = {
     Contract: { path: "/contracts" },
     Connection: { path: "/connects" },
     SubmitProject: { path: "/submit-contracts" },
+<<<<<<< HEAD
     Offer: { path: "/offer/:id" },
+=======
+    Offer: { path: "/offer" },
+>>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
 
     Chat: { path: "/chat" },
 
