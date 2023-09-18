@@ -67,11 +67,11 @@ const Signin = () => {
       <section className="section-header overflow-hidden bg-image text-white">
         <Container>
           <Row className="justify-content-center form-bg-image" >
-            <Col xs={12} className="d-flex align-items-center justify-content-center">
+            <Col xs={12} className="d-flex flex-column flex-lg-row flex-xl-row flex-xxl-row align-items-center justify-content-center">
               {/* image area with welcome text */}
               <SkyDiv />
               {/* sign-up form  */}
-              <div className="mb-4 mb-lg-0 bg-white shadow-soft border rounded-right border-light p-4 p-lg-5 h-100 w-100 fmxw-500">
+              <div className="mb-4 mb-lg-0 bg-white shadow-soft border rounded-right border-light p-4 p-lg-5 h-100 w-100 fmxw-500 order-0">
                 <Form className="mt-4">
                   <Form.Group id="username" className="mb-4">
                     <Form.Label className="upcoming-project-title">User Name</Form.Label>

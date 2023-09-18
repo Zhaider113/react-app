@@ -224,9 +224,9 @@ const PostJob = () => {
   return (
     
     <>
-      <Row className="mt-4 p-4">
+      <Row className="mt-4 p-4 justify-content-center">
 
-        <Col xs={12} xl={8} className="mb-4 offset-2">
+        <Col xs={12} sm={12} md={8} xl={8} className="mb-4">
         <h1 className="job-like-title submit-project-heading2">Add New Project</h1>
           <Card border="light" className="shadow-sm">
             <Card.Body>

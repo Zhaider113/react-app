@@ -70,7 +70,7 @@ const Signup = () => {
       <section className="section-header overflow-hidden bg-image text-white">
         <Container>
           <Row className="justify-content-center form-bg-image" >
-            <Col xs={12} className="d-flex align-items-center justify-content-center">
+            <Col xs={12} className="d-flex flex-column flex-lg-row flex-xl-row flex-xxl-row align-items-center justify-content-center">
               {/* image area with welcome text */}
               <SkyDiv />
               {/* sign-up form  */}

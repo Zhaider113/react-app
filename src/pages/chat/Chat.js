@@ -1,31 +1,20 @@
 
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-=======
 import React, { useState } from "react";
->>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
 import { Col, Row, Card, Image, InputGroup, Form, Dropdown, Button } from '@themesberg/react-bootstrap';
 import Profile3 from "../../assets/img/team/avatar-1.png";
 import { UsersWidget } from "../../components/Widgets";
 import ScrollToBottom from "react-scroll-to-bottom";
-<<<<<<< HEAD
-import Message from "./Message";//erro on this line
-=======
-import Message from "./Messages";
->>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
+import Messagess from "./Message";//erro on this line
+import Message from "./messages";
 import { faFileAlt, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const Chat = () => {
-<<<<<<< HEAD
   const [messages, setMessages] = useState([]);
   useEffect(()=>{
     setMessages(['hi brother', 'Hello world', 'Your new message', 'hi brother', 'Hello world', 'Your new message', 'hi brother', 'Hello world', 'Your new message', 'hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message'])
   }, [])
-=======
-  const [messages, setMessages] = useState(['hi brother', 'Hello world', 'Your new message', 'hi brother', 'Hello world', 'Your new message', 'hi brother', 'Hello world', 'Your new message', 'hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message','hi brother', 'Hello world', 'Your new message']);
->>>>>>> 87384ac33a120095178b2538ecca0558f774d7f0
   return (
     <>
       <Row className="mt-4 p-3 chat-div">

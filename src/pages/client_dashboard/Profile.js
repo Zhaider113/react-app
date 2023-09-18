@@ -358,7 +358,7 @@ const Profile = () => {
                 <Row>
                     <Col xs={12} xl={7} md={7} className="d-xl-flex align-items-center">
                         {/* <div className="d-xl-flex align-items-center"> */}
-                            <div className="user-avatar ms-5" style={{width: 'width: 2.5rem'}}>
+                            <div className="user-avatar ms-4" style={{width: 'width: 2.5rem'}}>
                                 <div>
                                     <label htmlFor="upload-button">
                                         {profileImg && (
@@ -405,7 +405,7 @@ const Profile = () => {
                 {/* </Row>
                 <Row> */}
                     {/* about user  */}
-                    <Col xs={12} xl={12} md={12} className="mb-2">
+                    <Col xs={12} xl={12} sm={12} md={12} className="mb-2">
                         <Card border="light" className="shadow-sm mb-4">
                             <Card.Body>
                                 {/* About Compnay or counrty info */}
